@@ -1,0 +1,18 @@
+name: Workflow test
+
+on: [push]
+
+jobs:
+  show-python-version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Show Python version
+      run: python --version
+
+  lint-python-code:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Pylint test
+      run: pylint myapp.py
