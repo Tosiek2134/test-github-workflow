@@ -12,6 +12,8 @@ jobs:
   lint-python-code:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Pylint test
